@@ -1,8 +1,8 @@
 import { View, Text, FlatList, Image, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
-import { museumsData } from '../../data/museums'
+import { museumsData } from '../../data/Museums'
 
-const index = ({ navigation }) => {
+const Index = ({ navigation }) => {
 
   const styles = StyleSheet.create({
     img: {
@@ -13,7 +13,7 @@ const index = ({ navigation }) => {
 
   const renderMuseum = ({ item }) => {
     return <>
-      <Pressable onPress={() => navigation.navigate('museumDetail',
+      <Pressable onPress={() => navigation.navigate('MuseumDetail',
         {
           id: item.id
         })}>
@@ -39,4 +39,4 @@ const index = ({ navigation }) => {
   )
 }
 
-export default index
+export default Index
