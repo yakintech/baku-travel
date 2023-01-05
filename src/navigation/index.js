@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 const Tab = createBottomTabNavigator();
 
-const index = () => {
+const Index = () => {
 
 
     return (<>
@@ -33,4 +33,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Index

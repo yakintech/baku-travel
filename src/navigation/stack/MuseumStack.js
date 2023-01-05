@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import MuseumListScreen from '../../screens/museum'
+import MuseumListScreen from '../../screens/museum/Index'
 import DetailScreen from '../../screens/museum/DetailScreen'
 
 
@@ -13,11 +13,11 @@ const MuseumStack = () => {
     <MuseumMobileStack.Navigator>
 
             <MuseumMobileStack.Screen 
-            name='museumList' 
+            name='MuseumList' 
             component={MuseumListScreen}/>
             
             <MuseumMobileStack.Screen 
-            name='museumDetail' 
+            name='MuseumDetail' 
             component={DetailScreen}/>
 
     </MuseumMobileStack.Navigator>

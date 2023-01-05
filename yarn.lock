@@ -280,15 +280,21 @@
   "version" "7.20.7"
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-Dgxsyg54Fx1d4Nge8UnvTrED63vrwOdPmyvPzlNN/boaliRP54pm3pGzZD1SJUwrBA+Cs/xdG8kXX6Mn/RfISQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/-/plugin-bugfix-safari-id-destructuring-collision-in-function-expression-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@^7.18.9":
+<<<<<<< HEAD
   "integrity" "sha512-sbr9+wNE5aXMBBFBICk01tt7sBf2Oc9ikRFEcem/ZORup9IMUdNhW7/wVLEbbtlWOsEubJet46mHAL2C8+2jKQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining/-/plugin-bugfix-v8-spread-parameters-in-optional-chaining-7.20.7.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.7"
   dependencies:
     "@babel/helper-plugin-utils" "^7.20.2"
@@ -314,8 +320,11 @@
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-proposal-class-static-block@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-AveGOoi9DAjUYYuUAG//Ig69GlazLnoyzMw68VCDux+c1tsnnH/OkYcpz/5xzMkEFC6UxjR5Gw1c+iY2wOGVeQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-class-static-block/-/plugin-proposal-class-static-block-7.20.7.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.7"
   dependencies:
     "@babel/helper-create-class-features-plugin" "^7.20.7"
@@ -323,8 +332,11 @@
     "@babel/plugin-syntax-class-static-block" "^7.14.5"
 
 "@babel/plugin-proposal-dynamic-import@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-1auuwmK+Rz13SJj36R+jqFPMJWyKEDd7lLSdOj4oJK0UTgGueSAtkrCvz9ewmgyU/P941Rv2fQwZJN8s6QruXw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-dynamic-import/-/plugin-proposal-dynamic-import-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
@@ -339,24 +351,33 @@
     "@babel/plugin-syntax-export-default-from" "^7.18.6"
 
 "@babel/plugin-proposal-export-namespace-from@^7.18.9":
+<<<<<<< HEAD
   "integrity" "sha512-k1NtHyOMvlDDFeb9G5PhUXuGj8m/wiwojgQVEhJ/fsVsMCpLyOP4h0uGEjYJKrRI+EVPlb5Jk+Gt9P97lOGwtA=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-export-namespace-from/-/plugin-proposal-export-namespace-from-7.18.9.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.9"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.9"
     "@babel/plugin-syntax-export-namespace-from" "^7.8.3"
 
 "@babel/plugin-proposal-json-strings@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-lr1peyn9kOdbYc0xr0OdHTZ5FMqS6Di+H0Fz2I/JwMzGmzJETNeOFq2pBySw6X/KFL5EWDjlJuMsUGRFb8fQgQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-json-strings/-/plugin-proposal-json-strings-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
     "@babel/plugin-syntax-json-strings" "^7.8.3"
 
 "@babel/plugin-proposal-logical-assignment-operators@^7.18.9":
+<<<<<<< HEAD
   "integrity" "sha512-y7C7cZgpMIjWlKE5T7eJwp+tnRYM89HmRvWM5EQuB5BoHEONjmQ8lSNmBUwOyy/GFRsohJED51YBF79hE1djug=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-logical-assignment-operators/-/plugin-proposal-logical-assignment-operators-7.20.7.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.7"
   dependencies:
     "@babel/helper-plugin-utils" "^7.20.2"
@@ -371,8 +392,11 @@
     "@babel/plugin-syntax-nullish-coalescing-operator" "^7.8.3"
 
 "@babel/plugin-proposal-numeric-separator@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-ozlZFogPqoLm8WBr5Z8UckIoE4YQ5KESVcNudyXOR8uqIkliTEgJ3RoketfG6pmzLdeZF0H/wjE9/cCEitBl7Q=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-numeric-separator/-/plugin-proposal-numeric-separator-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
@@ -407,16 +431,22 @@
     "@babel/plugin-syntax-optional-chaining" "^7.8.3"
 
 "@babel/plugin-proposal-private-methods@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-private-methods/-/plugin-proposal-private-methods-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-create-class-features-plugin" "^7.18.6"
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-proposal-private-property-in-object@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-Vq7b9dUA12ByzB4EjQTPo25sFhY+08pQDBSZRtUAkj7lb7jahaHR5igera16QZ+3my1nYR4dKsNdYj5IjPHilQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-private-property-in-object/-/plugin-proposal-private-property-in-object-7.20.5.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.5"
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.18.6"
@@ -425,8 +455,11 @@
     "@babel/plugin-syntax-private-property-in-object" "^7.14.5"
 
 "@babel/plugin-proposal-unicode-property-regex@^7.18.6", "@babel/plugin-proposal-unicode-property-regex@^7.4.4":
+<<<<<<< HEAD
   "integrity" "sha512-2BShG/d5yoZyXZfVePH91urL5wTG6ASZU9M4o03lKK8u8UW1y08OMttBSOADTcJrnPMpvDXRG3G8fyLh4ovs8w=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-create-regexp-features-plugin" "^7.18.6"
@@ -454,8 +487,11 @@
     "@babel/helper-plugin-utils" "^7.12.13"
 
 "@babel/plugin-syntax-class-static-block@^7.14.5":
+<<<<<<< HEAD
   "integrity" "sha512-b+YyPmr6ldyNnM6sqYeMWE+bgJcJpO6yS4QD7ymxgH34GBPNDM/THBh8iunyvKIZztiwLH4CJZ0RxTk9emgpjw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-syntax-class-static-block/-/plugin-syntax-class-static-block-7.14.5.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.14.5"
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
@@ -475,8 +511,11 @@
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-syntax-export-namespace-from@^7.8.3":
+<<<<<<< HEAD
   "integrity" "sha512-MXf5laXo6c1IbEbegDmzGPwGNTsHZmEy6QGznu5Sh2UCWvueywb2ee+CCE4zQiZstxU9BMoQO9i6zUFSY0Kj0Q=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-syntax-export-namespace-from/-/plugin-syntax-export-namespace-from-7.8.3.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.8.3"
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
@@ -489,8 +528,11 @@
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-syntax-import-assertions@^7.20.0":
+<<<<<<< HEAD
   "integrity" "sha512-IUh1vakzNoWalR8ch/areW7qFopR2AEw03JlG7BbrDqmQ4X3q9uuipQwSGrUn7oGiemKjtSLDhNtQHzMHr1JdQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-syntax-import-assertions/-/plugin-syntax-import-assertions-7.20.0.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.0"
   dependencies:
     "@babel/helper-plugin-utils" "^7.19.0"
@@ -559,8 +601,11 @@
     "@babel/helper-plugin-utils" "^7.8.0"
 
 "@babel/plugin-syntax-private-property-in-object@^7.14.5":
+<<<<<<< HEAD
   "integrity" "sha512-0wVnp9dxJ72ZUJDV27ZfbSj6iHLoytYZmh3rFcxNnvsJF3ktkzLDZPy/mA17HGsaQT3/DQsWYX1f1QGWkCoVUg=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-syntax-private-property-in-object/-/plugin-syntax-private-property-in-object-7.14.5.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.14.5"
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
@@ -640,16 +685,22 @@
     "@babel/helper-plugin-utils" "^7.20.2"
 
 "@babel/plugin-transform-dotall-regex@^7.18.6", "@babel/plugin-transform-dotall-regex@^7.4.4":
+<<<<<<< HEAD
   "integrity" "sha512-6S3jpun1eEbAxq7TdjLotAsl4WpQI9DxfkycRcKrjhQYzU87qpXdknpBg/e+TdcMehqGnLFi7tnFUBR02Vq6wg=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-create-regexp-features-plugin" "^7.18.6"
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-transform-duplicate-keys@^7.18.9":
+<<<<<<< HEAD
   "integrity" "sha512-d2bmXCtZXYc59/0SanQKbiWINadaJXqtvIQIzd4+hNwkWBgyCd5F/2t1kXoUdvPMrxzPvhK6EMQRROxsue+mfw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.18.9.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.9"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.9"
@@ -701,8 +752,11 @@
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/plugin-transform-modules-amd@^7.19.6":
+<<<<<<< HEAD
   "integrity" "sha512-NuzCt5IIYOW0O30UvqktzHYR2ud5bOWbY0yaxWZ6G+aFzOMJvrs5YHNikrbdaT15+KNO31nPOy5Fim3ku6Zb5g=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-modules-amd/-/plugin-transform-modules-amd-7.20.11.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.11"
   dependencies:
     "@babel/helper-module-transforms" "^7.20.11"
@@ -718,8 +772,11 @@
     "@babel/helper-simple-access" "^7.20.2"
 
 "@babel/plugin-transform-modules-systemjs@^7.19.6":
+<<<<<<< HEAD
   "integrity" "sha512-vVu5g9BPQKSFEmvt2TA4Da5N+QVS66EX21d8uoOihC+OCpUoGvzVsXeqFdtAEfVa5BILAeFt+U7yVmLbQnAJmw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.20.11.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.11"
   dependencies:
     "@babel/helper-hoist-variables" "^7.18.6"
@@ -728,8 +785,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
 
 "@babel/plugin-transform-modules-umd@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-dcegErExVeXcRqNtkRU/z8WlBLnvD4MRnHgNs3MytRO1Mn1sHRyhbcpYbVMGclAqOjdW+9cfkdZno9dFdfKLfQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-module-transforms" "^7.18.6"
@@ -744,8 +804,11 @@
     "@babel/helper-plugin-utils" "^7.20.2"
 
 "@babel/plugin-transform-new-target@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-DjwFA/9Iu3Z+vrAn+8pBUGcjhxKguSMlsFqeCKbhb9BAV756v0krzVK04CRDi/4aqmk8BsHb4a/gFcaA5joXRw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-new-target/-/plugin-transform-new-target-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
@@ -820,8 +883,11 @@
     "regenerator-transform" "^0.15.1"
 
 "@babel/plugin-transform-reserved-words@^7.18.6":
+<<<<<<< HEAD
   "integrity" "sha512-oX/4MyMoypzHjFrT1CdivfKZ+XvIPMFXwwxHp/r0Ddy2Vuomt4HDFGmft1TAY2yiTKiNSsh3kjBAzcM8kSdsjA=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-reserved-words/-/plugin-transform-reserved-words-7.18.6.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.6"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
@@ -868,8 +934,11 @@
     "@babel/helper-plugin-utils" "^7.18.9"
 
 "@babel/plugin-transform-typeof-symbol@^7.18.9":
+<<<<<<< HEAD
   "integrity" "sha512-SRfwTtF11G2aemAZWivL7PD+C9z52v9EvMqH9BuYbabyPuKUvSWks3oCg6041pT925L4zVFqaVBeECwsmlguEw=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.18.9.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.9"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.9"
@@ -884,8 +953,11 @@
     "@babel/plugin-syntax-typescript" "^7.20.0"
 
 "@babel/plugin-transform-unicode-escapes@^7.18.10":
+<<<<<<< HEAD
   "integrity" "sha512-kKAdAI+YzPgGY/ftStBFXTI1LZFju38rYThnfMykS+IXy8BVx+res7s2fxf1l8I35DV2T97ezo6+SGrXz6B3iQ=="
   "resolved" "https://registry.npmjs.org/@babel/plugin-transform-unicode-escapes/-/plugin-transform-unicode-escapes-7.18.10.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.18.10"
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.9"
@@ -899,8 +971,11 @@
     "@babel/helper-plugin-utils" "^7.18.6"
 
 "@babel/preset-env@^7.1.6":
+<<<<<<< HEAD
   "integrity" "sha512-1G0efQEWR1EHkKvKHqbG+IN/QdgwfByUpM5V5QroDzGV2t3S/WXNQd693cHiHTlCFMpr9B6FkPFXDA2lQcKoDg=="
   "resolved" "https://registry.npmjs.org/@babel/preset-env/-/preset-env-7.20.2.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "7.20.2"
   dependencies:
     "@babel/compat-data" "^7.20.1"
@@ -989,8 +1064,11 @@
     "@babel/plugin-transform-flow-strip-types" "^7.18.6"
 
 "@babel/preset-modules@^0.1.5":
+<<<<<<< HEAD
   "integrity" "sha512-A57th6YRG7oR3cq/yt/Y84MvGgE0eJG2F1JLhKuyG+jFxEgrd/HAMJatiFtmOiZurz+0DkrvbheCLaV5f2JfjA=="
   "resolved" "https://registry.npmjs.org/@babel/preset-modules/-/preset-modules-0.1.5.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "0.1.5"
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -3507,11 +3585,21 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+<<<<<<< HEAD
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
   "version" "1.1.1"
 
+=======
+"fsevents@^2.3.2":
+
+"function-bind@^1.1.1":
+  "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
+  "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
+  "version" "1.1.1"
+
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
 "function.prototype.name@^1.1.5":
   "integrity" "sha512-uN7m/BzVKQnCUF/iW8jYea67v++2u7m5UgENbHRtdDVclOUP+FMPlCNdmk0h/ysGyo2tavMJEDqJAkJdRa1vMA=="
   "resolved" "https://registry.npmjs.org/function.prototype.name/-/function.prototype.name-1.1.5.tgz"
@@ -5810,6 +5898,7 @@
     "fast-diff" "^1.1.2"
 
 "prettier@>=2", "prettier@>=2.0.0":
+<<<<<<< HEAD
   "integrity" "sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg=="
   "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.8.1.tgz"
   "version" "2.8.1"
@@ -5817,6 +5906,11 @@
 "pretty-format@^26.5.2":
   "integrity" "sha512-7AeGuCYNGmycyQbCqd/3PWH4eOoX/OiCa0uphp57NVTeAGdJGaAliecxwBDHYQCIvrW7aDBZCYeNTP/WX69mkg=="
   "resolved" "https://registry.npmjs.org/pretty-format/-/pretty-format-26.6.2.tgz"
+=======
+  "version" "2.8.1"
+
+"pretty-format@^26.5.2":
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "26.6.2"
   dependencies:
     "@jest/types" "^26.6.2"
@@ -6919,8 +7013,11 @@
     "is-typed-array" "^1.1.9"
 
 "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+<<<<<<< HEAD
   "integrity" "sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.9.4.tgz"
+=======
+>>>>>>> 960560998ba21d253a37ea882c2be9477996422e
   "version" "4.9.4"
 
 "uglify-es@^3.1.9":
