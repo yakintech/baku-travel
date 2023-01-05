@@ -12,7 +12,7 @@ const DetailScreen = ({ route }) => {
 
 
   return (<>
-    <MapView
+    {/* <MapView
       style={{ flex: 1, height: 500 }}
       initialRegion={{
         latitude: museum.latitude,
@@ -33,7 +33,7 @@ const DetailScreen = ({ route }) => {
 
       </Marker>
 
-    </MapView>
+    </MapView> */}
     <Text>Name: {museum.name}</Text>
     <Text>Description: {museum.description}</Text>
     <Image
