@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import Tab from './src/navigation/Index'
+import Tab from './src/navigation/index'
 
 const App = () => {
   return (<>

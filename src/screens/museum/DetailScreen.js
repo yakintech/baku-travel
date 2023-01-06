@@ -1,6 +1,6 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { museumsData } from '../../data/Museums'
+import { museumsData } from '../../data/museums'
 import MapView, { Marker } from 'react-native-maps';
 
 const DetailScreen = ({ route }) => {
