@@ -18,4 +18,22 @@ export const restaurantsData = [
     latitude: 40.36975437650636,
     longitude: 49.845457709804286,
   },
+    {
+    id: 2,
+    name: 'Pasifico Lounge & Dining',
+    description: 'Dinner, Late Night, Drinks',
+    mainImage:
+      'https://media-cdn.tripadvisor.com/media/photo-s/10/63/e8/b5/pasifico-terrace-summer.jpg',
+    latitude: 40.36975437650636,
+    longitude: 49.845457709804286,
+  },
+    {
+    id: ,
+    name: '',
+    description: '',
+    mainImage:
+      '',
+    latitude: ,
+    longitude: ,
+  },
 ];
