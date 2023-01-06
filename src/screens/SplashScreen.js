@@ -1,6 +1,7 @@
 import {StyleSheet, View, Image,} from 'react-native';
 import React from 'react';
 
+
 const SplashScreen = () => {
 
   return (
@@ -8,7 +9,7 @@ const SplashScreen = () => {
       <View>
 
         <Image
-          source={logo}
+          source={require('../../assets/logo/Logo.svg')}
           style={styles.image}
         />
 
