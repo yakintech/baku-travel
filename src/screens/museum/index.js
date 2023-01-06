@@ -13,7 +13,7 @@ const index = ({navigation}) => {
         <View>
           <Pressable
             onPress={() =>
-              navigation.navigate('museumDetail', {
+              navigation.navigate('MuseumDetail', {
                 id: item.id,
               })
             }>
