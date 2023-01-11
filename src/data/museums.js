@@ -5,7 +5,14 @@ export const museumsData = [
         description:`Azerbaijan National Carpet Museum (Azerbaijani: Azərbaycan Milli Xalça Muzeyi, formerly called the Azerbaijan Carpet Museum) is a museum located in Baku that displays Azerbaijani carpets and rugs with historical and modern weaving techniques and materials.[1] It has the largest collection of Azerbaijani carpets in the world.[2] First opened on Neftchiler Avenue in 1967, it moved to a new building on the Baku's seafront park in 2014.`,
         mainImage:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Az%C9%99rbaycan_xal%C3%A7a_muzeyi.jpg/540px-Az%C9%99rbaycan_xal%C3%A7a_muzeyi.jpg',
         latitude:40.3599298,
-        longitude:49.8336351
+        longitude:49.8336351,
+        images:[
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Az%C9%99rbaycan_xal%C3%A7a_muzeyi.jpg/540px-Az%C9%99rbaycan_xal%C3%A7a_muzeyi.jpg',
+
+            'https://worldkings.org/Userfiles/Upload/images/Capture(6).PNG',
+            
+            'https://worldkings.org/Userfiles/Upload/images/Azerbaijan-Carpet-Museum-3.jpg',
+        ]
     },
     {
         id:2,

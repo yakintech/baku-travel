@@ -26,6 +26,7 @@ function LottieSample() {
 
     let lottieRef = useRef(null);
 
+
     const play = () => {
         lottieRef.current.play();
     }
