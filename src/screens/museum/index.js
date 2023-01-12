@@ -1,36 +1,19 @@
-import { View, Text, FlatList, Image, StyleSheet, Pressable } from 'react-native';
-import React, { useContext, useEffect } from 'react';
-import { museumsData } from '../../data/museums';
+import {View, Text, FlatList, Image, StyleSheet, Pressable} from 'react-native';
+import React, {useContext, useEffect} from 'react';
+import {museumsData} from '../../data/museums';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Icon from 'react-native-vector-icons/Fontisto';
-import style from '../../style/style'
-import { favoritesContext } from '../../store/context/FavoritesContext';
-import { favoritesStorageHelper } from '../../library/helpers/FavoritesStorageHelper';
-import Geolocation from 'react-native-geolocation-service';
+import style from '../../style/style';
+import {favoritesContext} from '../../store/context/FavoritesContext';
+import {favoritesStorageHelper} from '../../library/helpers/FavoritesStorageHelper';
+
+const Index = ({navigation}) => {
 
 
-const Index = ({ navigation }) => {
+  const {favorites, setfavorites} = useContext(favoritesContext);
 
-
-  useEffect(() => {
-    Geolocation.getCurrentPosition(
-      (position) => {
-        console.log(position);
-      },
-      (error) => {
-        // See error code charts below.
-        console.log(error.code, error.message);
-      },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-  );
-  }, [])
-  
-
-  const { favorites, setfavorites } = useContext(favoritesContext)
-
-  const addToFavorites = (item) => {
-
-    item.type = "Museum";
+  const addToFavorites = item => {
+    item.type = 'Museum';
     //favorite control
     let favorite = favorites.find(q => q.id == item.id);
 
@@ -38,28 +21,20 @@ const Index = ({ navigation }) => {
       let filteredFavorites = favorites.filter(q => q.id != item.id);
       setfavorites([...filteredFavorites]);
       favoritesStorageHelper.set([...filteredFavorites]);
-    }
-    else {
+    } else {
       setfavorites([...favorites, item]);
       favoritesStorageHelper.set([...favorites, item]);
-
     }
-  }
+  };
 
-
-  const getStarIcon = (id) => {
+  const getStarIcon = id => {
     let favorite = favorites.find(q => q.id == id);
 
-    if (favorite)
-      return <MaterialCommunityIcons name="star" size={26} />
-    else
-      return <MaterialCommunityIcons name="star-outline" size={26} />
+    if (favorite) return <MaterialCommunityIcons name="star" size={26} />;
+    else return <MaterialCommunityIcons name="star-outline" size={26} />;
+  };
 
-
-  }
-
-
-  const renderMuseum = ({ item }) => {
+  const renderMuseum = ({item}) => {
     return (
       <>
         <View>
@@ -72,7 +47,7 @@ const Index = ({ navigation }) => {
             <View style={style.container}>
               <View style={style.row}>
                 <View
-                  style={{ position: 'absolute', top: 0, left: 0, zIndex: 999 }}>
+                  style={{position: 'absolute', top: 0, left: 0, zIndex: 999}}>
                   <Text style={style.row.location}>Baku, Old City</Text>
                   <Text style={style.row.name}>{item.name}</Text>
                 </View>
@@ -85,9 +60,13 @@ const Index = ({ navigation }) => {
                   />
                 </View>
                 <View style={style.row.info}>
-                  <View style={{ flexDirection: 'row' }}>
+                  <View style={{flexDirection: 'row'}}>
                     <Text style={style.row.info.text}> 2km</Text>
-                    <Text style={{ color: 'rgb(144, 82, 47)', marginHorizontal: 5 }}> Open soon</Text>
+                    <Text
+                      style={{color: 'rgb(144, 82, 47)', marginHorizontal: 5}}>
+                      {' '}
+                      Open soon
+                    </Text>
                   </View>
                   <Text style={style.row.info.icon}>
                     {/* <Icon name="favorite" size={24} /> */}
@@ -97,9 +76,7 @@ const Index = ({ navigation }) => {
             </View>
           </Pressable>
           <Pressable onPress={() => addToFavorites(item)}>
-            {
-              getStarIcon(item.id)
-            }
+            {getStarIcon(item.id)}
           </Pressable>
         </View>
       </>
@@ -114,5 +91,3 @@ const Index = ({ navigation }) => {
 };
 
 export default Index;
-
-
