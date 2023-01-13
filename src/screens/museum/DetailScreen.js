@@ -1,9 +1,7 @@
-import { View, Text, Image, Button } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { museumsData } from '../../data/museums'
 import MapView, { Marker } from 'react-native-maps';
-import Carousel from 'react-native-snap-carousel';
-import Share from 'react-native-share'
 
 const DetailScreen = ({ route }) => {
 
@@ -11,27 +9,6 @@ const DetailScreen = ({ route }) => {
 
   let museum = museumsData.find(q => q.id == id);
 
-
-  const onShare = () => {
-     Share.open({
-    message:'Hello Share',
-    title:'Hello Title'
-  })
-  }
-
-  
- 
-
-
-  const renderItem = ({ item }) => {
-
-    return <Image
-      style={{ width: 400, height: 100 }}
-      source={{
-        uri: item,
-      }}
-    />
-  }
 
 
   return (<>
@@ -65,17 +42,6 @@ const DetailScreen = ({ route }) => {
         uri: museum.mainImage,
       }}
     />
-
-    <Button onPress={onShare} title="Share" />
-
-    {/* <Carousel
-      data={museum.images}
-      renderItem={renderItem}
-      sliderWidth={300}
-      itemWidth={300}
-      autoplay={true}
-      loop={true}
-    /> */}
   </>
   )
 }
