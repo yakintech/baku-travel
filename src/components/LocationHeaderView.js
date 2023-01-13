@@ -18,7 +18,11 @@ const LocationHeaderView = () => {
       .then(res => res.json())
       .then(json => {
         setWeatherData(json);
-      });
+      })
+      .catch(err => {
+        console.log('ERror', err);
+        
+      })
   };
 
   useEffect(() => {
@@ -48,21 +52,7 @@ const LocationHeaderView = () => {
         />
         <Text style={styles.text}>{address && address}</Text>
       </View>
-      <View style={styles.weather}>
-        <Image
-          source={{
-            uri: `http://openweathermap.org/img/w/${
-              weatherData && weatherData.weather[0].icon
-            }.png`,
-          }}
-          style={styles.weatherIcon}
-        />
-        <Text style={styles.textDegree}>
-          {weatherData && weatherData.main.temp > 0
-            ? '+' + weatherData.main.temp
-            : weatherData && weatherData.main.temp}
-        </Text>
-      </View>
+   
     </View>
   );
 };
