@@ -19,7 +19,7 @@ target 'BakuTravelApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
   target 'BakuTravelAppTests' do
     inherit! :complete
