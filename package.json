@@ -14,11 +14,8 @@
     "@react-navigation/bottom-tabs": "^6.5.2",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/native-stack": "^6.9.7",
-<<<<<<< HEAD
     "formik": "^2.2.9",
-=======
     "geolib": "^3.3.3",
->>>>>>> e6f35536cbb8df200e7b4cab3b8043a7ce1b42b2
     "lottie-react-native": "^5.1.4",
     "react": "17.0.2",
     "react-native": "0.68.2",
