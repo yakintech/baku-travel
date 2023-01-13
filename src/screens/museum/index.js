@@ -48,8 +48,8 @@ const Index = ({navigation}) => {
               <View style={style.row}>
                 <View
                   style={{position: 'absolute', top: 0, left: 0, zIndex: 999}}>
-                  <Text style={style.row.location}>Baku, Old City</Text>
-                  <Text style={style.row.name}>{item.name}</Text>
+                  <Text style={style.row?.location}>Baku, Old City</Text>
+                  <Text style={style.row?.name}>{item.name}</Text>
                 </View>
                 <View style={style.animation}>
                   <Image
@@ -77,9 +77,9 @@ const Index = ({navigation}) => {
               </View>
             </View>
           </Pressable>
-          <Pressable onPress={() => addToFavorites(item)}>
+          {/* <Pressable onPress={() => addToFavorites(item)}>
             {getStarIcon(item.id)}
-          </Pressable>
+          </Pressable> */}
         </View>
       </View>
     );

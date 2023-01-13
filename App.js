@@ -8,13 +8,13 @@ import {LocationProvider} from './src/store/context/LocationContext';
 const App = () => {
   return (
     <>
-      <LocationProvider>
+      {/* <LocationProvider> */}
         <FavoritesProvider>
           <NavigationContainer>
             <Tab />
           </NavigationContainer>
         </FavoritesProvider>
-      </LocationProvider>
+      {/* </LocationProvider> */}
     </>
   );
 };
