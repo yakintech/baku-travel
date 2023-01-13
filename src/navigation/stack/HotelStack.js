@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const LottieMobileStack = createNativeStackNavigator();
 
-function LottieStack() {
+function HotelStack() {
 
     return (<>
         <LottieMobileStack.Navigator>
@@ -50,4 +50,4 @@ function LottieSample() {
 
 }
 
-export default LottieStack
+export default HotelStack

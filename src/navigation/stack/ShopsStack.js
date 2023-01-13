@@ -6,7 +6,7 @@ import DeviceInfo from 'react-native-device-info';
 
 const DeviceMobileStack = createNativeStackNavigator();
 
-function DeviceStack() {
+function ShopsStack() {
     return (
         <DeviceMobileStack.Navigator>
 
@@ -18,7 +18,7 @@ function DeviceStack() {
     )
 }
 
-export default DeviceStack
+export default ShopsStack
 
 
 

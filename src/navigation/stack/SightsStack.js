@@ -8,7 +8,7 @@ import DetailScreen from '../../screens/museum/DetailScreen'
 
 const MuseumMobileStack = createNativeStackNavigator();
 
-const MuseumStack = () => {
+const SightsStack = () => {
   return (<>
     <MuseumMobileStack.Navigator>
 
@@ -24,4 +24,4 @@ const MuseumStack = () => {
   </>)
 }
 
-export default MuseumStack
+export default SightsStack
