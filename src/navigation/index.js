@@ -1,5 +1,5 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MuseumStack from './stack/MuseumStack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FavoriteStack from './stack/FavoriteStack';
@@ -80,4 +80,4 @@ const Index = () => {
     );
 }
 
-export default Index
+export default Index;
