@@ -13,8 +13,9 @@ const MuseumStack = () => {
     <MuseumMobileStack.Navigator>
 
             <MuseumMobileStack.Screen 
-            name='MuseumList' 
-            component={MuseumListScreen}/>
+        name='MuseumList'
+        component={MuseumListScreen}
+        options={{ headerShown: false }} />
             
             <MuseumMobileStack.Screen 
             name='MuseumDetail' 

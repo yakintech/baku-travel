@@ -1,36 +1,41 @@
-import { View, Text, FlatList, Image, StyleSheet, Pressable } from 'react-native';
-import React, { useContext, useEffect } from 'react';
-import { museumsData } from '../../data/museums';
+import {View, Text, FlatList, Image, StyleSheet, Pressable} from 'react-native';
+import React, {useContext, useEffect} from 'react';
+import {museumsData} from '../../data/museums';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Icon from 'react-native-vector-icons/Fontisto';
-import style from '../../style/style'
-import { favoritesContext } from '../../store/context/FavoritesContext';
-import { favoritesStorageHelper } from '../../library/helpers/FavoritesStorageHelper';
+// import style from '../../style/style';
+import {favoritesContext} from '../../store/context/FavoritesContext';
+import {favoritesStorageHelper} from '../../library/helpers/FavoritesStorageHelper';
 import Geolocation from 'react-native-geolocation-service';
-
+// import InsetShadow from 'react-native-inset-shadow';
+import {getDistance} from 'geolib'
+import Overlay from 'react-native-elements';
 
 const Index = ({ navigation }) => {
-
-
-  useEffect(() => {
-    Geolocation.getCurrentPosition(
-      (position) => {
-        console.log(position);
-      },
-      (error) => {
-        // See error code charts below.
-        console.log(error.code, error.message);
-      },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-  );
-  }, [])
+  const calculateDistance = () => {
+    return Math.floor(
+      getDistance(
+        {latitude: 40.3599298, longitude: 49.8336351},
+        {latitude: 40.28129968919387, longitude: 49.58456588146549},
+      ) / 1000,
+    );
+  };
   
 
-  const { favorites, setfavorites } = useContext(favoritesContext)
+  // const calculateDistance = (latitude, longitude, my_latitude, my_longitude) => {
+  //   return Math.floor(
+  //     getDistance(
+  //       { latitude: latitude, longitude: longitude },
+  //       {latitude: my_latitude, longitude: my_longitude}
+  //     ) / 1000
+  //   )
+  // }
 
-  const addToFavorites = (item) => {
 
-    item.type = "Museum";
+  const {favorites, setfavorites} = useContext(favoritesContext);
+
+  const addToFavorites = item => {
+    item.type = 'Museum';
     //favorite control
     let favorite = favorites.find(q => q.id == item.id);
 
@@ -38,30 +43,38 @@ const Index = ({ navigation }) => {
       let filteredFavorites = favorites.filter(q => q.id != item.id);
       setfavorites([...filteredFavorites]);
       favoritesStorageHelper.set([...filteredFavorites]);
-    }
-    else {
+    } else {
       setfavorites([...favorites, item]);
       favoritesStorageHelper.set([...favorites, item]);
-
     }
-  }
+  };
 
-
-  const getStarIcon = (id) => {
+  const getStarIcon = id => {
     let favorite = favorites.find(q => q.id == id);
 
     if (favorite)
-      return <MaterialCommunityIcons name="star" size={26} />
+      return (
+        <MaterialCommunityIcons
+          style={style.row.info.icon}
+          name="bookmark"
+          color={'#018CF1'}
+          size={26}
+        />
+      );
     else
-      return <MaterialCommunityIcons name="star-outline" size={26} />
+      return (
+        <MaterialCommunityIcons
+          name="bookmark-outline"
+          color={'#F6F6F6'}
+          size={26}
+          style={style.row.info.icon}
+        />
+      );
+  };
 
-
-  }
-
-
-  const renderMuseum = ({ item }) => {
+  const renderMuseum = ({item}) => {
     return (
-      <>
+      <View style={style.body}>
         <View>
           <Pressable
             onPress={() =>
@@ -72,11 +85,11 @@ const Index = ({ navigation }) => {
             <View style={style.container}>
               <View style={style.row}>
                 <View
-                  style={{ position: 'absolute', top: 0, left: 0, zIndex: 999 }}>
+                  style={{position: 'absolute', top: 0, left: 0, zIndex: 999}}>
                   <Text style={style.row.location}>Baku, Old City</Text>
                   <Text style={style.row.name}>{item.name}</Text>
                 </View>
-                <View>
+                <View style={style.animation}>
                   <Image
                     style={style.img}
                     source={{
@@ -85,24 +98,27 @@ const Index = ({ navigation }) => {
                   />
                 </View>
                 <View style={style.row.info}>
-                  <View style={{ flexDirection: 'row' }}>
-                    <Text style={style.row.info.text}> 2km</Text>
-                    <Text style={{ color: 'rgb(144, 82, 47)', marginHorizontal: 5 }}> Open soon</Text>
+                  <View style={{flexDirection: 'row'}}>
+                    <Text style={style.row.info.text}>
+                      {' '}
+                      {calculateDistance()}km
+                    </Text>
+                    <Text
+                      style={{color: 'rgb(144, 82, 47)', marginHorizontal: 5}}>
+                      Open soon
+                    </Text>
                   </View>
-                  <Text style={style.row.info.icon}>
-                    {/* <Icon name="favorite" size={24} /> */}
-                  </Text>
+                  <Pressable
+                    style={style.row.info.icon}
+                    onPress={() => addToFavorites(item)}>
+                    {getStarIcon(item.id)}
+                  </Pressable>
                 </View>
               </View>
             </View>
           </Pressable>
-          <Pressable onPress={() => addToFavorites(item)}>
-            {
-              getStarIcon(item.id)
-            }
-          </Pressable>
         </View>
-      </>
+      </View>
     );
   };
 
@@ -115,4 +131,65 @@ const Index = ({ navigation }) => {
 
 export default Index;
 
+const style = StyleSheet.create({
+  container: {
+    backgroundColor: '#1C1C1C',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 30,
+  },
+  body: {
+    // paddingTop: 10,
+    // flex:1
+  },
+  row: {
+    location: {
+      color: 'white',
+      fontSize: 18,
+      fontWeight: '600',
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      fontFamily: 'Roboto',
+      fontStyle: 'normal',
+    },
+    name: {
+      color: 'white',
+      fontSize: 16,
+      fontWeight: '500',
+      paddingHorizontal: 10,
+      fontFamily: 'Roboto',
+      fontStyle: 'normal',
+    },
+    info: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      // paddingVertical: 10,
 
+      text: {
+        color: '#909090',
+      },
+      icon: {
+        // color: 'white',
+        marginVertical: 5,
+      },
+    },
+  },
+  img: {
+    width: 350,
+    height: 200,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  animation: {
+    shadowColor: '#red',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.51,
+    shadowRadius: 13.16,
+
+    elevation: 20,
+  },
+});
