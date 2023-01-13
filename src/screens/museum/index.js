@@ -1,30 +1,13 @@
 import { View, Text, FlatList, Image, StyleSheet, Pressable } from 'react-native';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { museumsData } from '../../data/museums';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Icon from 'react-native-vector-icons/Fontisto';
 import style from '../../style/style'
 import { favoritesContext } from '../../store/context/FavoritesContext';
 import { favoritesStorageHelper } from '../../library/helpers/FavoritesStorageHelper';
-import Geolocation from 'react-native-geolocation-service';
-
 
 const Index = ({ navigation }) => {
-
-
-  useEffect(() => {
-    Geolocation.getCurrentPosition(
-      (position) => {
-        console.log(position);
-      },
-      (error) => {
-        // See error code charts below.
-        console.log(error.code, error.message);
-      },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-  );
-  }, [])
-  
 
   const { favorites, setfavorites } = useContext(favoritesContext)
 
