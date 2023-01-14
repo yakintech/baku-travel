@@ -8,19 +8,31 @@ import {favoritesContext} from '../../store/context/FavoritesContext';
 import {favoritesStorageHelper} from '../../library/helpers/FavoritesStorageHelper';
 import Geolocation from 'react-native-geolocation-service';
 // import InsetShadow from 'react-native-inset-shadow';
-import {getDistance} from 'geolib'
+import {getDistance} from 'geolib';
 import Overlay from 'react-native-elements';
+import { locationContext } from '../../store/context/LocationContext';
 
-const Index = ({ navigation }) => {
-  const calculateDistance = () => {
-    return Math.floor(
-      getDistance(
-        {latitude: 40.3599298, longitude: 49.8336351},
-        {latitude: 40.28129968919387, longitude: 49.58456588146549},
-      ) / 1000,
-    );
-  };
+
+const Index = ({navigation}) => {
+  const {location, setLocation} = useContext(locationContext);
+
+  // console.log(location.coords.latitude);
+
+        const calculateDistance = (
+          latitude,
+          longitude,
+          device_latitude,
+          device_longitude,
+        ) => {
+          return Math.floor(
+            getDistance(
+              {latitude: latitude, longitude: longitude},
+              {latitude: device_latitude, longitude: device_longitude},
+            ) / 1000,
+          );
+        };
   
+
 
   // const calculateDistance = (latitude, longitude, my_latitude, my_longitude) => {
   //   return Math.floor(
@@ -30,7 +42,6 @@ const Index = ({ navigation }) => {
   //     ) / 1000
   //   )
   // }
-
 
   const {favorites, setfavorites} = useContext(favoritesContext);
 
@@ -101,7 +112,10 @@ const Index = ({ navigation }) => {
                   <View style={{flexDirection: 'row'}}>
                     <Text style={style.row.info.text}>
                       {' '}
-                      {calculateDistance()}km
+                      {
+                       calculateDistance(item.latitude, item.longitude, location && location.coords.latitude, location && location.coords.longitude)
+                      }
+                      km
                     </Text>
                     <Text
                       style={{color: 'rgb(144, 82, 47)', marginHorizontal: 5}}>

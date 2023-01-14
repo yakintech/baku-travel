@@ -48,7 +48,7 @@ const Index = () => {
                     
                     tabBarLabel: 'Restourans',
                     tabBarIcon: ({ color }) => (
-                        <MaterialIcons name="restaurant-outline" color={color} size={26} /> 
+                        <MaterialIcons name="restaurant" color={color} size={26} /> 
                         )
                     }}
 

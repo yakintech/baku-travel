@@ -1,11 +1,11 @@
-import { useState, createContext, useEffect } from 'react';
-import { requestLocationPermission } from '../../library/helpers/requestLocationPermission';
+import {useState, createContext, useEffect} from 'react';
+import {requestLocationPermission} from '../../library/helpers/requestLocationPermission';
 import Geolocation from 'react-native-geolocation-service';
-import { Platform } from 'react-native';
+import {Platform} from 'react-native';
 
 export const locationContext = createContext(null);
 
-export const LocationProvider = ({ children }) => {
+export const LocationProvider = ({children}) => {
   //GLOBAL STATE
   const [location, setLocation] = useState('');
 
@@ -15,34 +15,39 @@ export const LocationProvider = ({ children }) => {
   };
 
   useEffect(() => {
-
-
     if (Platform.OS === 'ios') {
-      Geolocation.requestAuthorization("always")
-        .then(res => {
-          Geolocation.getCurrentPosition(
-            position => {
-              setLocation(position);
-            },
-            error => {
-              alert(error.message)
-              // See error code charts below.
-              console.log(error.code, error.message);
-            },
-            { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
-          );
-        })
+      Geolocation.requestAuthorization('always').then(res => {
+        Geolocation.getCurrentPosition(
+          position => {
+            setLocation(position);
+          },
+          error => {
+            alert(error.message);
+            // See error code charts below.
+            console.log(error.code, error.message);
+          },
+          {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+        );
+      });
+    } else {
+      const getPermission = async () => {
+        const isPermited = await requestLocationPermission();
+        console.log(isPermited);
+        Geolocation.getCurrentPosition(
+          position => {
+            setLocation(position);
+          },
+          error => {
+            alert(error.message);
+            // See error code charts below.
+            console.log(error.code, error.message);
+          },
+          {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+        );
+      };
+
+      getPermission();
     }
-    else{
-    // const getPermission = async () => {
-    //   const isPermited = await requestLocationPermission();
-    //   console.log(isPermited);
-    // };
-
-    // getPermission();
-    }
-
-
   }, []);
   return (
     <locationContext.Provider value={values}>
