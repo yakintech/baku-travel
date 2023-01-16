@@ -108,12 +108,12 @@ const Index = ({navigation}) => {
                   <Text style={style.row.name}>{item.name}</Text>
                 </View>
                 <View style={style.iconSave}>
-                  <Pressable
-                    style={style.row.info.icon}
-                    onPress={() => addToFavorites(item)}>
-                    {getStarIcon(item.id)}
-                  </Pressable>
-                </View>
+                    <Pressable
+                      style={style.row.info.icon}
+                      onPress={() => addToFavorites(item)}>
+                      {getStarIcon(item.id)}
+                    </Pressable>
+                  </View>
                 <View style={style.animation}>
                   <Image
                     style={style.img}
@@ -123,7 +123,7 @@ const Index = ({navigation}) => {
                   />
                 </View>
                 <View style={style.row.info}>
-                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                  <View style={{flexDirection: 'row', alignItems:'center'}}>
                     <Text style={style.row.info.text}>
                       {' '}
                       {calculateDistance(
@@ -134,18 +134,16 @@ const Index = ({navigation}) => {
                       )}
                       km
                     </Text>
-                    <Text style={{color: 'orange', marginHorizontal: 5}}>
+                    <Text
+                      style={{color: 'orange', marginHorizontal: 5}}>
                       Open soon
                     </Text>
                   </View>
                   <TouchableOpacity style={style.startButton}>
                     <Text style={style.startText}>Start</Text>
-                    <MaterialCommunityIcons
-                      name="arrow-top-right"
-                      color={'black'}
-                      size={15}
-                    />
+                    <MaterialCommunityIcons name='arrow-top-right' color={'black'} size={15}/>
                   </TouchableOpacity>
+                  
                 </View>
               </View>
             </View>
@@ -178,11 +176,7 @@ const Index = ({navigation}) => {
               </View>
             </View>
             <View style={style.inputBox}>
-              <MaterialCommunityIcons
-                name="home-search-outline"
-                color={'black'}
-                size={22}
-              />
+              <MaterialCommunityIcons name="home-search-outline" color={'black'} size={22} />
               <TextInput placeholder="Find in Baku" fontSize={22} />
             </View>
           </View>
@@ -280,18 +274,19 @@ const style = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      position: 'absolute',
-      top: -125,
-      left: 20,
-      backgroundColor: '#292929',
-      width: 410,
-      borderRadius: 15,
-      height: 80,
-      paddingHorizontal: 15,
+      position:'absolute',
+      top:-125,
+      left:20,
+      backgroundColor:'#292929',
+      width:410,
+      borderRadius:15,
+      height:80,
+      paddingHorizontal:15
       // paddingVertical: 10,
+      ,
       text: {
         color: 'white',
-        fontSize: 20,
+        fontSize:20,
       },
       icon: {
         color: 'white',
@@ -419,25 +414,25 @@ const style = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
   },
-  iconSave: {
-    backgroundColor: '#292929',
-    paddingVertical: 7,
-    position: 'absolute',
-    top: 10,
-    left: 380,
-    zIndex: 999,
-    borderRadius: 100,
-    paddingHorizontal: 15,
+  iconSave:{
+    backgroundColor:'#292929',
+    paddingVertical:7,
+    position:'absolute',
+    top:10,
+    left:380,
+    zIndex:999,
+    borderRadius:100,
+    paddingHorizontal:15
   },
-  startButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#B9FF66',
-    padding: 15,
-    borderRadius: 15,
+  startButton:{
+    flexDirection:'row',
+    alignItems:'center',
+    backgroundColor:'#B9FF66',
+    padding:15,
+    borderRadius:15
   },
-  startText: {
-    fontSize: 15,
-    fontWeight: '500',
-  },
+  startText:{
+    fontSize:15,
+    fontWeight:'500'
+  }
 });
