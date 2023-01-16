@@ -15,18 +15,15 @@ const Index = () => {
     return (<>
 
         <Tab.Navigator
-            screenOptions={{ 
-                headerShown: false ,
-                tabBarStyle:{
-                  backgroundColor:'#1C1C1C'
+            screenOptions={{
+                headerShown: false,
+                tabBarStyle: {
+                    backgroundColor: '#1C1C1C',
+                    activeTintColor: '#018CF1',
+                    inactiveTintColor: '#f9f9f9',
                 }
             }}
-            tabBarOptions={{
-                activeTintColor: '#018CF1',
-                inactiveTintColor: '#f9f9f9',
-                backgroundColor : "#1C1C1C"
-            }}
-            
+
         >
             <Tab.Screen
                 name='Museum'
@@ -45,16 +42,16 @@ const Index = () => {
                 name='Device'
                 component={DeviceStack}
                 options={{
-                    
+
                     tabBarLabel: 'Restourans',
                     tabBarIcon: ({ color }) => (
-                        <MaterialIcons name="restaurant" color={color} size={26} /> 
-                        )
-                    }}
+                        <MaterialIcons name="restaurant" color={color} size={26} />
+                    )
+                }}
 
             />
 
-            
+
             <Tab.Screen
                 name='Lottie'
                 component={LottieStack}
