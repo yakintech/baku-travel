@@ -77,7 +77,7 @@ const Index = ({navigation}) => {
           style={style.row.info.icon}
           name="bookmark"
           color={'#018CF1'}
-          size={26}
+          size={20}
         />
       );
     else
@@ -85,7 +85,7 @@ const Index = ({navigation}) => {
         <MaterialCommunityIcons
           name="bookmark-outline"
           color={'#F6F6F6'}
-          size={26}
+          size={20}
           style={style.row.info.icon}
         />
       );
@@ -108,12 +108,12 @@ const Index = ({navigation}) => {
                   <Text style={style.row.name}>{item.name}</Text>
                 </View>
                 <View style={style.iconSave}>
-                    <Pressable
-                      style={style.row.info.icon}
-                      onPress={() => addToFavorites(item)}>
-                      {getStarIcon(item.id)}
-                    </Pressable>
-                  </View>
+                  <Pressable
+                    style={style.row.info.icon}
+                    onPress={() => addToFavorites(item)}>
+                    {getStarIcon(item.id)}
+                  </Pressable>
+                </View>
                 <View style={style.animation}>
                   <Image
                     style={style.img}
@@ -123,7 +123,7 @@ const Index = ({navigation}) => {
                   />
                 </View>
                 <View style={style.row.info}>
-                  <View style={{flexDirection: 'row', alignItems:'center'}}>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Text style={style.row.info.text}>
                       {' '}
                       {calculateDistance(
@@ -134,16 +134,18 @@ const Index = ({navigation}) => {
                       )}
                       km
                     </Text>
-                    <Text
-                      style={{color: 'orange', marginHorizontal: 5}}>
+                    <Text style={{color: 'orange', marginHorizontal: 5}}>
                       Open soon
                     </Text>
                   </View>
                   <TouchableOpacity style={style.startButton}>
                     <Text style={style.startText}>Start</Text>
-                    <MaterialCommunityIcons name='arrow-top-right' color={'black'} size={15}/>
+                    <MaterialCommunityIcons
+                      name="arrow-top-right"
+                      color={'black'}
+                      size={13}
+                    />
                   </TouchableOpacity>
-                  
                 </View>
               </View>
             </View>
@@ -160,7 +162,7 @@ const Index = ({navigation}) => {
           <View style={style.topHome}>
             <Text style={style.topText}>Home</Text>
             <View style={style.topIcon}>
-              <MaterialCommunityIcons name="bell" size={37} color={'#FFC4DD'} />
+              <MaterialCommunityIcons name="bell" size={28} color={'#FFC4DD'} />
             </View>
           </View>
           <View style={style.MainInput}>
@@ -176,8 +178,12 @@ const Index = ({navigation}) => {
               </View>
             </View>
             <View style={style.inputBox}>
-              <MaterialCommunityIcons name="home-search-outline" color={'black'} size={22} />
-              <TextInput placeholder="Find in Baku" fontSize={22} />
+              <MaterialCommunityIcons
+                name="home-search-outline"
+                color={'black'}
+                size={20}
+              />
+              <TextInput placeholder="Find in Baku" fontSize={18} />
             </View>
           </View>
           <View style={style.categoryBox}>
@@ -255,16 +261,16 @@ const style = StyleSheet.create({
   row: {
     location: {
       color: 'white',
-      fontSize: 18,
+      fontSize: 11,
       fontWeight: '600',
       paddingHorizontal: 10,
-      paddingVertical: 5,
+      paddingVertical: 2,
       fontFamily: 'System',
       fontStyle: 'normal',
     },
     name: {
       color: 'white',
-      fontSize: 16,
+      fontSize: 10,
       fontWeight: '500',
       paddingHorizontal: 10,
       fontFamily: 'System',
@@ -274,19 +280,18 @@ const style = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      position:'absolute',
-      top:-125,
-      left:20,
-      backgroundColor:'#292929',
-      width:410,
-      borderRadius:15,
-      height:80,
-      paddingHorizontal:15
+      position: 'absolute',
+      top: -105,
+      left: 20,
+      backgroundColor: '#292929',
+      width: 325,
+      borderRadius: 15,
+      height: 60,
+      paddingHorizontal: 15,
       // paddingVertical: 10,
-      ,
       text: {
         color: 'white',
-        fontSize:20,
+        fontSize: 13,
       },
       icon: {
         color: 'white',
@@ -295,8 +300,8 @@ const style = StyleSheet.create({
     },
   },
   img: {
-    width: 450,
-    height: 350,
+    width: 365,
+    height: 300,
     borderRadius: 30,
   },
   animation: {
@@ -317,7 +322,7 @@ const style = StyleSheet.create({
     paddingBottom: 25,
   },
   topText: {
-    fontSize: 37,
+    fontSize: 28,
     fontWeight: '500',
     color: 'white',
   },
@@ -328,7 +333,7 @@ const style = StyleSheet.create({
   },
   Main: {
     backgroundColor: '#1C1C1C',
-    paddingHorizontal: 45,
+    paddingHorizontal: 25,
     paddingTop: 15,
   },
   newYork: {
@@ -336,12 +341,12 @@ const style = StyleSheet.create({
     alignItems: 'center',
   },
   topTextone: {
-    fontSize: 35,
+    fontSize: 27,
     color: 'black',
     fontWeight: '400',
   },
   topTexttwo: {
-    fontSize: 35,
+    fontSize: 27,
     color: 'black',
     fontWeight: '500',
     paddingLeft: 8,
@@ -349,8 +354,8 @@ const style = StyleSheet.create({
   MainInput: {
     backgroundColor: '#21D1CC',
     borderRadius: 24,
-    width: 450,
-    height: 220,
+    width: 365,
+    height: 200,
     paddingHorizontal: 24,
     paddingBottom: 20,
     paddingTop: 35,
@@ -366,7 +371,7 @@ const style = StyleSheet.create({
   },
   textbycategory: {
     color: 'white',
-    fontSize: 28,
+    fontSize: 24,
   },
   categories: {
     flexDirection: 'row',
@@ -376,12 +381,13 @@ const style = StyleSheet.create({
   },
   categorytext: {
     color: 'white',
-    fontSize: 15,
+    fontSize: 13,
+    paddingLeft: 5,
   },
   littlecategoryBox: {
     flexDirection: 'row',
-    paddingHorizontal: 35,
-    paddingVertical: 15,
+    paddingHorizontal: 22,
+    paddingVertical: 10,
     alignItems: 'center',
     backgroundColor: '#292929',
     borderRadius: 30,
@@ -394,7 +400,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 10,
     paddingBottom: 5,
-    width: 315,
+    width: 260,
   },
   recommentText: {
     color: 'white',
@@ -414,25 +420,24 @@ const style = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
   },
-  iconSave:{
-    backgroundColor:'#292929',
-    paddingVertical:7,
-    position:'absolute',
-    top:10,
-    left:380,
-    zIndex:999,
-    borderRadius:100,
-    paddingHorizontal:15
+  iconSave: {
+    backgroundColor: '#292929',
+    position: 'absolute',
+    top: 10,
+    left: 310,
+    zIndex: 999,
+    borderRadius: 100,
+    paddingHorizontal: 10,
   },
-  startButton:{
-    flexDirection:'row',
-    alignItems:'center',
-    backgroundColor:'#B9FF66',
-    padding:15,
-    borderRadius:15
+  startButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#B9FF66',
+    padding: 7,
+    borderRadius: 10,
   },
-  startText:{
-    fontSize:15,
-    fontWeight:'500'
-  }
+  startText: {
+    fontSize: 13,
+    fontWeight: '500',
+  },
 });
