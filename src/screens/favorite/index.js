@@ -51,6 +51,7 @@ const Index = () => {
                 color={'black'}
                 size={15}
               />
+              
             </TouchableOpacity>
           </View>
         </View>
