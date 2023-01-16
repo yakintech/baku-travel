@@ -416,9 +416,11 @@ const style = StyleSheet.create({
     zIndex: 999,
     backgroundColor: '#292929',
     borderRadius: 50,
-    paddingBottom: 10,
+    // paddingBottom: 10,
+    paddingVertical: 8,
     alignItems: 'center',
     paddingHorizontal: 15,
+    // justifyContent: 'center',
   },
   iconSave: {
     backgroundColor: '#292929',
@@ -427,7 +429,8 @@ const style = StyleSheet.create({
     left: 310,
     zIndex: 999,
     borderRadius: 100,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 3
   },
   startButton: {
     flexDirection: 'row',
