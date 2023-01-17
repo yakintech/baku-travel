@@ -155,92 +155,99 @@ const Index = ({navigation}) => {
     );
   };
 
-  return (
-    <>
-      <ScrollView>
-        <View style={style.Main}>
-          <View style={style.topHome}>
-            <Text style={style.topText}>Home</Text>
-            <View style={style.topIcon}>
-              <MaterialCommunityIcons name="bell" size={28} color={'#FFC4DD'} />
-            </View>
-          </View>
-          <View style={style.MainInput}>
-            <View>
-              <View style={style.newYork}>
-                <Text style={style.topTextone}>Welcome to</Text>
-                <Text style={style.topTexttwo}>New York 🗽</Text>
-              </View>
-              <View>
-                <Text style={style.topTextone}>
-                  Find the best place in city
-                </Text>
-              </View>
-            </View>
-            <View style={style.inputBox}>
-              <MaterialCommunityIcons
-                name="home-search-outline"
-                color={'black'}
-                size={20}
-              />
-              <TextInput placeholder="Find in Baku" fontSize={18} />
-            </View>
-          </View>
-          <View style={style.categoryBox}>
-            <Text style={style.textbycategory}>By categories</Text>
-            <View>
-              <View style={style.categories}>
-                <View style={style.littlecategoryBox}>
-                  <MaterialCommunityIcons
-                    name="clock-time-eight-outline"
-                    size={15}
-                    color={'white'}
-                  />
-                  <Text style={style.categorytext}>Time</Text>
-                </View>
-                <View style={style.littlecategoryBox}>
-                  <MaterialCommunityIcons
-                    name="crowd"
-                    size={15}
-                    color={'white'}
-                  />
-                  <Text style={style.categorytext}>Crowd</Text>
-                </View>
-                <View style={style.littlecategoryBox}>
-                  <MaterialCommunityIcons
-                    name="bookmark-outline"
-                    size={15}
-                    color={'white'}
-                  />
-                  <Text style={style.categorytext}>Bookmarked</Text>
-                </View>
-              </View>
-              <View style={style.categories1}>
-                <View style={style.littlecategoryBox}>
-                  <MaterialCommunityIcons
-                    name="crowd"
-                    size={15}
-                    color={'white'}
-                  />
-                  <Text style={style.categorytext}>Crowd</Text>
-                </View>
-                <View style={style.littlecategoryBox}>
-                  <MaterialCommunityIcons
-                    name="bookmark-outline"
-                    size={15}
-                    color={'white'}
-                  />
-                  <Text style={style.categorytext}>Bookmarked</Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View style={style.recommendBox}>
-            <Text style={style.recommentText}>Our recommendation</Text>
+  const BottomFlatlist = () => {
+    return (
+      <View style={style.Main}>
+        <View style={style.topHome}>
+          <Text style={style.topText}>Home</Text>
+          <View style={style.topIcon}>
+            <MaterialCommunityIcons name="bell" size={28} color={'#FFC4DD'} />
           </View>
         </View>
-        <FlatList data={museumsData} renderItem={renderMuseum} />
-      </ScrollView>
+        <View style={style.MainInput}>
+          <View>
+            <View style={style.newYork}>
+              <Text style={style.topTextone}>Welcome to</Text>
+              <Text style={style.topTexttwo}>New York 🗽</Text>
+            </View>
+            <View>
+              <Text style={style.topTextone}>Find the best place in city</Text>
+            </View>
+          </View>
+          <View style={style.inputBox}>
+            <MaterialCommunityIcons
+              name="home-search-outline"
+              color={'black'}
+              size={20}
+            />
+            <TextInput placeholder="Find in Baku" fontSize={18} />
+          </View>
+        </View>
+        <View style={style.categoryBox}>
+          <Text style={style.textbycategory}>By categories</Text>
+          <View>
+            <View style={style.categories}>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="clock-time-eight-outline"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Time</Text>
+              </View>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="crowd"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Crowd</Text>
+              </View>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="bookmark-outline"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Bookmarked</Text>
+              </View>
+            </View>
+            <View style={style.categories1}>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="crowd"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Crowd</Text>
+              </View>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="bookmark-outline"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Bookmarked</Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={style.recommendBox}>
+          <Text style={style.recommentText}>Our recommendation</Text>
+        </View>
+      </View>
+    );
+  };
+
+  return (
+    <>
+      <View>
+        <FlatList
+          data={museumsData}
+          renderItem={renderMuseum}
+          ListFooterComponent={BottomFlatlist}
+        />
+      </View>
     </>
   );
 };
@@ -430,7 +437,7 @@ const style = StyleSheet.create({
     zIndex: 999,
     borderRadius: 100,
     paddingHorizontal: 15,
-    paddingVertical: 3
+    paddingVertical: 3,
   },
   startButton: {
     flexDirection: 'row',
