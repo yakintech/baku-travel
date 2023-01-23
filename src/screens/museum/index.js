@@ -1,4 +1,14 @@
-import {View, Text, FlatList, Image, StyleSheet, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  StyleSheet,
+  Pressable,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useContext, useEffect} from 'react';
 import {museumsData} from '../../data/museums';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -10,29 +20,27 @@ import Geolocation from 'react-native-geolocation-service';
 // import InsetShadow from 'react-native-inset-shadow';
 import {getDistance} from 'geolib';
 import Overlay from 'react-native-elements';
-import { locationContext } from '../../store/context/LocationContext';
-
+import {locationContext} from '../../store/context/LocationContext';
+import styles from 'react-native-inset-shadow/src/styles';
 
 const Index = ({navigation}) => {
   const {location, setLocation} = useContext(locationContext);
 
   // console.log(location.coords.latitude);
 
-        const calculateDistance = (
-          latitude,
-          longitude,
-          device_latitude,
-          device_longitude,
-        ) => {
-          return Math.floor(
-            getDistance(
-              {latitude: latitude, longitude: longitude},
-              {latitude: device_latitude, longitude: device_longitude},
-            ) / 1000,
-          );
-        };
-  
-
+  const calculateDistance = (
+    latitude,
+    longitude,
+    device_latitude,
+    device_longitude,
+  ) => {
+    return Math.floor(
+      getDistance(
+        {latitude: latitude, longitude: longitude},
+        {latitude: device_latitude, longitude: device_longitude},
+      ) / 1000,
+    );
+  };
 
   // const calculateDistance = (latitude, longitude, my_latitude, my_longitude) => {
   //   return Math.floor(
@@ -69,7 +77,7 @@ const Index = ({navigation}) => {
           style={style.row.info.icon}
           name="bookmark"
           color={'#018CF1'}
-          size={26}
+          size={20}
         />
       );
     else
@@ -77,7 +85,7 @@ const Index = ({navigation}) => {
         <MaterialCommunityIcons
           name="bookmark-outline"
           color={'#F6F6F6'}
-          size={26}
+          size={20}
           style={style.row.info.icon}
         />
       );
@@ -95,10 +103,16 @@ const Index = ({navigation}) => {
             }>
             <View style={style.container}>
               <View style={style.row}>
-                <View
-                  style={{position: 'absolute', top: 0, left: 0, zIndex: 999}}>
+                <View style={style.imgtoptext}>
                   <Text style={style.row.location}>Baku, Old City</Text>
                   <Text style={style.row.name}>{item.name}</Text>
+                </View>
+                <View style={style.iconSave}>
+                  <Pressable
+                    style={style.row.info.icon}
+                    onPress={() => addToFavorites(item)}>
+                    {getStarIcon(item.id)}
+                  </Pressable>
                 </View>
                 <View style={style.animation}>
                   <Image
@@ -109,24 +123,29 @@ const Index = ({navigation}) => {
                   />
                 </View>
                 <View style={style.row.info}>
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Text style={style.row.info.text}>
                       {' '}
-                      {
-                       calculateDistance(item.latitude, item.longitude, location && location.coords.latitude, location && location.coords.longitude)
-                      }
+                      {calculateDistance(
+                        item.latitude,
+                        item.longitude,
+                        location && location.coords.latitude,
+                        location && location.coords.longitude,
+                      )}
                       km
                     </Text>
-                    <Text
-                      style={{color: 'rgb(144, 82, 47)', marginHorizontal: 5}}>
+                    <Text style={{color: 'orange', marginHorizontal: 5}}>
                       Open soon
                     </Text>
                   </View>
-                  <Pressable
-                    style={style.row.info.icon}
-                    onPress={() => addToFavorites(item)}>
-                    {getStarIcon(item.id)}
-                  </Pressable>
+                  <TouchableOpacity style={style.startButton}>
+                    <Text style={style.startText}>Start</Text>
+                    <MaterialCommunityIcons
+                      name="arrow-top-right"
+                      color={'black'}
+                      size={13}
+                    />
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>
@@ -136,9 +155,99 @@ const Index = ({navigation}) => {
     );
   };
 
+  const BottomFlatlist = () => {
+    return (
+      <View style={style.Main}>
+        <View style={style.topHome}>
+          <Text style={style.topText}>Home</Text>
+          <View style={style.topIcon}>
+            <MaterialCommunityIcons name="bell" size={28} color={'#FFC4DD'} />
+          </View>
+        </View>
+        <View style={style.MainInput}>
+          <View>
+            <View style={style.newYork}>
+              <Text style={style.topTextone}>Welcome to</Text>
+              <Text style={style.topTexttwo}>New York 🗽</Text>
+            </View>
+            <View>
+              <Text style={style.topTextone}>Find the best place in city</Text>
+            </View>
+          </View>
+          <View style={style.inputBox}>
+            <MaterialCommunityIcons
+              name="home-search-outline"
+              color={'black'}
+              size={20}
+            />
+            <TextInput placeholder="Find in Baku" fontSize={18} />
+          </View>
+        </View>
+        <View style={style.categoryBox}>
+          <Text style={style.textbycategory}>By categories</Text>
+          <View>
+            <View style={style.categories}>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="clock-time-eight-outline"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Time</Text>
+              </View>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="crowd"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Crowd</Text>
+              </View>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="bookmark-outline"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Bookmarked</Text>
+              </View>
+            </View>
+            <View style={style.categories1}>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="crowd"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Crowd</Text>
+              </View>
+              <View style={style.littlecategoryBox}>
+                <MaterialCommunityIcons
+                  name="bookmark-outline"
+                  size={15}
+                  color={'white'}
+                />
+                <Text style={style.categorytext}>Bookmarked</Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={style.recommendBox}>
+          <Text style={style.recommentText}>Our recommendation</Text>
+        </View>
+      </View>
+    );
+  };
+
   return (
     <>
-      <FlatList data={museumsData} renderItem={renderMuseum} />
+      <View>
+        <FlatList
+          data={museumsData}
+          renderItem={renderMuseum}
+          ListFooterComponent={BottomFlatlist}
+        />
+      </View>
     </>
   );
 };
@@ -159,16 +268,16 @@ const style = StyleSheet.create({
   row: {
     location: {
       color: 'white',
-      fontSize: 18,
+      fontSize: 11,
       fontWeight: '600',
       paddingHorizontal: 10,
-      paddingVertical: 5,
+      paddingVertical: 2,
       fontFamily: 'System',
       fontStyle: 'normal',
     },
     name: {
       color: 'white',
-      fontSize: 16,
+      fontSize: 10,
       fontWeight: '500',
       paddingHorizontal: 10,
       fontFamily: 'System',
@@ -178,22 +287,29 @@ const style = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      position: 'absolute',
+      top: -105,
+      left: 20,
+      backgroundColor: '#292929',
+      width: 325,
+      borderRadius: 15,
+      height: 60,
+      paddingHorizontal: 15,
       // paddingVertical: 10,
-
       text: {
-        color: '#909090',
+        color: 'white',
+        fontSize: 13,
       },
       icon: {
-        // color: 'white',
+        color: 'white',
         marginVertical: 5,
       },
     },
   },
   img: {
-    width: 350,
-    height: 200,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    width: 365,
+    height: 300,
+    borderRadius: 30,
   },
   animation: {
     shadowColor: '#red',
@@ -205,5 +321,133 @@ const style = StyleSheet.create({
     shadowRadius: 13.16,
 
     elevation: 20,
+  },
+  topHome: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: 25,
+  },
+  topText: {
+    fontSize: 28,
+    fontWeight: '500',
+    color: 'white',
+  },
+  topIcon: {
+    padding: 5,
+    borderRadius: 100,
+    backgroundColor: '#333333',
+  },
+  Main: {
+    backgroundColor: '#1C1C1C',
+    paddingHorizontal: 25,
+    paddingTop: 15,
+  },
+  newYork: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  topTextone: {
+    fontSize: 27,
+    color: 'black',
+    fontWeight: '400',
+  },
+  topTexttwo: {
+    fontSize: 27,
+    color: 'black',
+    fontWeight: '500',
+    paddingLeft: 8,
+  },
+  MainInput: {
+    backgroundColor: '#21D1CC',
+    borderRadius: 24,
+    width: 365,
+    height: 200,
+    paddingHorizontal: 24,
+    paddingBottom: 20,
+    paddingTop: 35,
+    justifyContent: 'space-between',
+  },
+  inputBox: {
+    backgroundColor: '#1BA8A4',
+    borderRadius: 100,
+    height: 45,
+    flexDirection: 'row',
+    paddingLeft: 15,
+    alignItems: 'center',
+  },
+  textbycategory: {
+    color: 'white',
+    fontSize: 24,
+  },
+  categories: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 20,
+    paddingBottom: 5,
+  },
+  categorytext: {
+    color: 'white',
+    fontSize: 13,
+    paddingLeft: 5,
+  },
+  littlecategoryBox: {
+    flexDirection: 'row',
+    paddingHorizontal: 22,
+    paddingVertical: 10,
+    alignItems: 'center',
+    backgroundColor: '#292929',
+    borderRadius: 30,
+  },
+  categoryBox: {
+    paddingTop: 35,
+  },
+  categories1: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 10,
+    paddingBottom: 5,
+    width: 260,
+  },
+  recommentText: {
+    color: 'white',
+    fontSize: 28,
+  },
+  recommendBox: {
+    paddingTop: 15,
+  },
+  imgtoptext: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    zIndex: 999,
+    backgroundColor: '#292929',
+    borderRadius: 50,
+    // paddingBottom: 10,
+    paddingVertical: 8,
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    // justifyContent: 'center',
+  },
+  iconSave: {
+    backgroundColor: '#292929',
+    position: 'absolute',
+    top: 10,
+    left: 310,
+    zIndex: 999,
+    borderRadius: 100,
+    paddingHorizontal: 15,
+    paddingVertical: 3,
+  },
+  startButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#B9FF66',
+    padding: 7,
+    borderRadius: 10,
+  },
+  startText: {
+    fontSize: 13,
+    fontWeight: '500',
   },
 });
