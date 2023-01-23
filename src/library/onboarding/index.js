@@ -1,4 +1,4 @@
-import { ScrollView, Text, View, Dimensions, StyleSheet, TouchableOpacity, FlatList } from "react-native";
+import { ScrollView, Text, View, Dimensions, StyleSheet, TouchableOpacity, FlatList,Image } from "react-native";
 import React, { Fragment, useRef, useState } from "react";
 import { storage } from "../helpers/AsyncStorage";
 
@@ -48,21 +48,29 @@ const Index = ({ data, renderItem, renderButtonStyle, setIsShow }) => {
             />
             <View style={{
                 position: 'absolute',
-                top: 10,
+                top: 50,
                 right: 10,
-                flexDirection: 'row'
+                flexDirection: 'row',
+                padding:10
             }}>
+
                 {data.map((v, index) =>
+                
                     <View key={index} style={{
                         width: currentPage == index ? 37 : 17,
                         height: 4,
                         opacity: currentPage == index ? 1 : 0.4,
                         marginLeft: 5,
                         borderRadius: 2,
-                        backgroundColor: '#fff'
+                        backgroundColor: '#fff',
+                        
                     }} />
                 )}
+
             </View>
+            <Text style={{color:'white',fontSize:15,position:'absolute',padding:10,fontWeight:'500',top:40,left:10}}>
+                    Skip
+                </Text>
             <TouchableOpacity
                 style={renderButtonStyle}
                 onPress={() => {
